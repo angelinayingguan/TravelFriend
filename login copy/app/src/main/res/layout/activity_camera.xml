@@ -16,15 +16,17 @@ xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="wrap_content"
     android:layout_marginTop="20dp"
     android:layout_gravity="center_horizontal"
-    android:background="@color/bg_login"
+    android:background="@drawable/btnshape2"
+    android:textColor="#FFFAF0"
     android:text="Camera!" />
 
     <Button
         android:id="@+id/btnrec"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="350dp"
+        android:layout_marginTop="415dp"
         android:layout_gravity="center_horizontal"
-        android:background="@color/bg_login"
+        android:background="@drawable/btnshape2"
+        android:textColor="#FFFAF0"
         android:text="Recognize!" />
 </LinearLayout>

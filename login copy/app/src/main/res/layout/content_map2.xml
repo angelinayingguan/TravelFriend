@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:map="http://schemas.android.com/apk/res-auto"
@@ -7,46 +6,42 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"  >
-    <TextView
-        android:id="@+id/latlongLocation"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="bottom"
-        android:layout_alignParentBottom="true"
-        android:background="@color/colorPrimaryDark"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
-        android:textColor="#ffffffff"
-        android:paddingLeft="5dp"
-        android:paddingRight="5dp" />
+
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="435dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:weightSum="1">
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
             android:text="Current Locations"
             android:id="@+id/btnCurrent"
+
+            android:background="@drawable/btnshape3"
             android:onClick="cur"
-            android:layout_weight="1.20" />
+            android:layout_weight="0.30" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Recommendation"
+            android:id="@+id/btnRecommend"
+            android:background="@drawable/btnshape3"
+            android:layout_marginLeft="10dp"
+            android:onClick="rec"
+            android:layout_weight="0.15" />
 
 
 
-    <Button
-        android:layout_width="193dp"
-        android:layout_height="wrap_content"
-        android:text="See Recommendation"
-        android:id="@+id/btnRecommend"
-        android:onClick="rec"/>
+
 
 
     </LinearLayout>
 
 
-        android:layout_width="wrap_content"
+    android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
         <fragment
