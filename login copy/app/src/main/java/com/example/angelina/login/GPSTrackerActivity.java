@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.location.Location;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -50,6 +51,7 @@ public class GPSTrackerActivity extends AppCompatActivity implements
                 Intent intent = new Intent();
                 intent.putExtra("Longitude", mLastLocation.getLongitude());
                 intent.putExtra("Latitude", mLastLocation.getLatitude());
+                Toast.makeText(getApplicationContext(),"Longitude:"+Double.toString(mLastLocation.getLongitude())+"\nLatitude:"+Double.toString(mLastLocation.getLatitude()),Toast.LENGTH_SHORT).show();
                 setResult(1,intent);
                 finish();
 
