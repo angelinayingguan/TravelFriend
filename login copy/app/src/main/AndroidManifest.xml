@@ -80,6 +80,10 @@
         <activity
             android:name=".MapActivity2"
             android:label="@string/title_activity_map2"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".GPSTrackerActivity"
+            android:label="@string/title_activity_gpstracker"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

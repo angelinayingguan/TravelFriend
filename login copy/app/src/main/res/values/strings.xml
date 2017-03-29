@@ -36,6 +36,7 @@
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_from_to">FromToActivity</string>
     <string name="title_activity_map2">MapActivity2</string>
+    <string name="title_activity_gpstracker">GPSTrackerActivity</string>
 
 
 </resources>

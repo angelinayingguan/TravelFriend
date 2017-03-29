@@ -1,6 +1,7 @@
 package com.example.angelina.login;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Build;
@@ -8,6 +9,7 @@ import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
+import android.view.View;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -168,7 +170,19 @@ import com.google.android.gms.maps.model.MarkerOptions;
             return true;
         }
     }
+        public void cur(View v){
+            Intent intent = new Intent(MapActivity2.this, GPSTrackerActivity.class);
+            startActivityForResult(intent,1);
+        }
 
+        protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+            super.onActivityResult(requestCode, resultCode, data);
+            if(requestCode == 1){
+                Bundle extras = data.getExtras();
+                Double longitude = extras.getDouble("Longitude");
+                Double latitude = extras.getDouble("Latitude");
+            }
+        }
     @Override
     public void onRequestPermissionsResult(int requestCode,
                                            String permissions[], int[] grantResults) {
