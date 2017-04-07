@@ -1,63 +1,19 @@
 package com.example.angelina.login;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.annotation.TargetApi;
-import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.support.annotation.NonNull;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.app.LoaderManager.LoaderCallbacks;
-
-import android.content.CursorLoader;
-import android.content.Loader;
-import android.database.Cursor;
-import android.net.Uri;
-import android.os.AsyncTask;
-
-import android.os.Build;
 import android.os.Bundle;
-import android.provider.ContactsContract;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
-import android.text.TextUtils;
-import android.view.KeyEvent;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.ViewGroup;
 import android.view.WindowManager;
-import android.view.inputmethod.EditorInfo;
-import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
-import com.facebook.AccessToken;
-import com.facebook.CallbackManager;
-import com.facebook.FacebookCallback;
-import com.facebook.FacebookException;
-import com.facebook.FacebookSdk;
-import com.facebook.Profile;
-import com.facebook.login.LoginResult;
-import com.facebook.login.widget.LoginButton;
-import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
-import com.google.android.gms.appindexing.Thing;
 import com.google.android.gms.common.api.GoogleApiClient;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import static android.Manifest.permission.READ_CONTACTS;
-import static android.app.PendingIntent.getActivity;
-
 public class LoginActivity extends AppCompatActivity {
-
 
     /**
      * Id to identity READ_CONTACTS permission request.
@@ -65,10 +21,7 @@ public class LoginActivity extends AppCompatActivity {
     private static final int REQUEST_READ_CONTACTS = 0;
     private EditText email;
     private EditText pass;
-    private TextView info;
-    private LoginButton loginButton;
     DatabaseHelper helper = new DatabaseHelper(this);
-    private CallbackManager callbackManager = CallbackManager.Factory.create();
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -76,15 +29,10 @@ public class LoginActivity extends AppCompatActivity {
     private GoogleApiClient client;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        FacebookSdk.sdkInitialize(getApplicationContext());
-        info = (TextView)findViewById(R.id.info);
-        loginButton = (LoginButton)findViewById(R.id.login_button);
-
         // Set up the login form.
 
 
@@ -97,30 +45,6 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     // When Button Login clicked
-
-
-    private FacebookCallback<LoginResult> mcallback = new FacebookCallback<LoginResult>() {
-        @Override
-        public void onSuccess(LoginResult loginResult) {
-
-            Intent i = new Intent(LoginActivity.this, MainActivity.class);
-            startActivity(i);
-        }
-
-        @Override
-        public void onCancel() {
-            info.setText("Login attempt canceled.");
-        }
-
-        @Override
-        public void onError(FacebookException error) {
-            info.setText("Login attempt failed.");
-        }
-    };
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        callbackManager.onActivityResult(requestCode, resultCode, data);
-    }
     public void Signin(View v) {
         email = (EditText) findViewById(R.id.email);
         pass = (EditText) findViewById(R.id.password);
@@ -137,9 +61,11 @@ public class LoginActivity extends AppCompatActivity {
         } else if (pass.getText().toString().equals("")) {
             pass.setError("Can't be Empty");
 
-        } else if (password.equals("nonono")) {
+        }
+        else if (password.equals("nonono")){
             email.setError("Email not registered");
-        } else if (strpass.equals(password)) {
+        }
+        else if (strpass.equals(password)) {
             Intent i = new Intent(LoginActivity.this, MainActivity.class);
             i.putExtra("email", str);
             startActivity(i);
@@ -159,9 +85,7 @@ public class LoginActivity extends AppCompatActivity {
             pass.setError("Can't be Empty");
             valid = false;
         }
-
         return valid;
-
     }*/
 
 
@@ -173,13 +97,11 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-
-
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
      */
-    public Action getIndexApiAction() {
+    /*public Action getIndexApiAction() {
         Thing object = new Thing.Builder()
                 .setName("Login Page") // TODO: Define a title for the content shown.
                 // TODO: Make sure this auto-generated URL is correct.
@@ -190,27 +112,21 @@ public class LoginActivity extends AppCompatActivity {
                 .setActionStatus(Action.STATUS_TYPE_COMPLETED)
                 .build();
     }
-
     @Override
     public void onStart() {
         super.onStart();
-
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client.connect();
         AppIndex.AppIndexApi.start(client, getIndexApiAction());
     }
-
     @Override
     public void onStop() {
         super.onStop();
-
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         AppIndex.AppIndexApi.end(client, getIndexApiAction());
         client.disconnect();
     }
+*/
 }
-
-
-
