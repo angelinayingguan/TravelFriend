@@ -16,7 +16,7 @@ public class GPSTrackerActivity extends AppCompatActivity implements
 
     private GoogleApiClient mGoogleApiClient;
     Location mLastLocation;
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
